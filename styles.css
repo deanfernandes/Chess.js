@@ -1,0 +1,78 @@
+:root {
+    --rows: 8;
+    --cols: 8;
+    --square-width: 75px;
+    --square-height: 75px;
+    --square-background-color-light: lightgreen;
+    --square-background-color-dark: green;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header, 
+footer {
+    text-align: center;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+}
+
+footer {
+    font-weight: bold;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(var(--cols), var(--square-width));
+    grid-template-rows: repeat(var(--rows), var(--square-height));
+    width: calc(var(--cols) * var(--square-width));
+    height: calc(var(--rows) * var(--square-height));
+    margin: 50px 0;
+}
+
+.square {
+    width: var(--square-width);
+    height: var(--square-height);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.square.light {
+    background-color: var(--square-background-color-light);
+}
+
+.square.dark {
+    background-color: var(--square-background-color-dark);
+}
+
+#reset {
+    font-size: 1.2rem;
+    background-color: var(--square-background-color-light);
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+}
+
+#reset:hover {
+    background-color: var(--square-background-color-dark);
+}
+
+.piece {
+    width: var(--square-width);
+    height: var(--square-height);
+}
